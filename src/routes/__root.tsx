@@ -72,14 +72,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Divou Biojoias — joias artesanais com sementes brasileiras" },
+      { name: "description", content: "Biojoias sustentáveis feitas à mão por comunidades brasileiras. Colares, brincos, pulseiras e edições limitadas com sementes, fibras e fios naturais." },
+      { name: "author", content: "Divou Biojoias" },
+      { name: "keywords", content: "biojoias sustentáveis, artesanato natural, joias com sementes, biojoias brasileiras, joias artesanais Brasília" },
+      { property: "og:title", content: "Divou Biojoias — joias vivas, feitas à mão" },
+      { property: "og:description", content: "Biojoias sustentáveis com sementes e fibras de comunidades brasileiras." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "Divou Biojoias" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
