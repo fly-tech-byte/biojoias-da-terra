@@ -61,7 +61,7 @@ function PostPage() {
             <img src={flatlayImg} alt="" className="h-full w-full object-cover" />
           </div>
           <div className="mt-10 space-y-6 text-lg leading-relaxed">
-            {post.body.map((p, i) => <p key={i}>{p}</p>)}
+            {post.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
           </div>
         </article>
       </main>
