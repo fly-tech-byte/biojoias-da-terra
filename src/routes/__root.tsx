@@ -76,11 +76,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Biojoias sustentáveis feitas à mão por comunidades brasileiras. Colares, brincos, pulseiras e edições limitadas com sementes, fibras e fios naturais." },
       { name: "author", content: "Divou Biojoias" },
       { name: "keywords", content: "biojoias sustentáveis, artesanato natural, joias com sementes, biojoias brasileiras, joias artesanais Brasília" },
-      { property: "og:title", content: "Divou Biojoias — joias vivas, feitas à mão" },
-      { property: "og:description", content: "Biojoias sustentáveis com sementes e fibras de comunidades brasileiras." },
+      { property: "og:title", content: "Divou Biojoias — joias artesanais com sementes brasileiras" },
+      { property: "og:description", content: "Biojoias sustentáveis feitas à mão por comunidades brasileiras. Colares, brincos, pulseiras e edições limitadas com sementes, fibras e fios naturais." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Divou Biojoias" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Divou Biojoias — joias artesanais com sementes brasileiras" },
+      { name: "twitter:description", content: "Biojoias sustentáveis feitas à mão por comunidades brasileiras. Colares, brincos, pulseiras e edições limitadas com sementes, fibras e fios naturais." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0d1d6f89-cab9-4d8d-8bb4-cc8e169264ca" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0d1d6f89-cab9-4d8d-8bb4-cc8e169264ca" },
     ],
     links: [
       {
