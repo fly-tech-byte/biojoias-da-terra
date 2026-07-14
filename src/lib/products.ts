@@ -1,7 +1,17 @@
-import necklaceImg from "@/assets/product-necklace.jpg";
-import earringImg from "@/assets/product-earring.jpg";
-import braceletImg from "@/assets/product-bracelet.jpg";
-import limitedImg from "@/assets/product-limited.jpg";
+import raizAurea from "@/assets/uploaded/colar-raiz-aurea.png.asset.json";
+import sementesMarrom from "@/assets/uploaded/colar-sementes-marrom.png.asset.json";
+import sementesDiferentes from "@/assets/uploaded/colar-sementes-diferentes.png.asset.json";
+import sementesRochas from "@/assets/uploaded/colar-sementes-rochas.png.asset.json";
+import acaiMagenta from "@/assets/uploaded/colar-acai-magenta.png.asset.json";
+import conjuntoTurquesa from "@/assets/uploaded/conjunto-turquesa.png.asset.json";
+import conjuntoCocoMadeira from "@/assets/uploaded/conjunto-coco-madeira.png.asset.json";
+
+const imagesByCategory: Record<Category, string[]> = {
+  colares: [raizAurea.url, sementesMarrom.url, sementesDiferentes.url, sementesRochas.url, acaiMagenta.url],
+  brincos: [conjuntoTurquesa.url, conjuntoCocoMadeira.url],
+  pulseiras: [conjuntoTurquesa.url, conjuntoCocoMadeira.url],
+  "edicoes-limitadas": [acaiMagenta.url, sementesRochas.url, conjuntoTurquesa.url, sementesDiferentes.url],
+};
 
 export type Category = "colares" | "brincos" | "pulseiras" | "edicoes-limitadas";
 
