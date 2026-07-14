@@ -34,10 +34,10 @@ export type Product = {
   story: string;
 };
 
-const imageFor = (c: Category) =>
-  c === "colares" ? necklaceImg :
-  c === "brincos" ? earringImg :
-  c === "pulseiras" ? braceletImg : limitedImg;
+const imageFor = (c: Category, n: number) => {
+  const list = imagesByCategory[c];
+  return list[n % list.length];
+};
 
 const seedNames = [
   "Açaí", "Jarina", "Tagua", "Olho-de-cabra", "Paxiúba", "Buriti", "Jupati",
