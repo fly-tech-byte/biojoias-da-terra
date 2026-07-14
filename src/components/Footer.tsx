@@ -63,7 +63,7 @@ export function Footer() {
             <a aria-label="WhatsApp" href="#" className="p-2 rounded-full border border-border hover:bg-foreground hover:text-background transition-colors">
               <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
             </a>
-            <a aria-label="E-mail" href="mailto:ola@divoubiojoias.com.br" className="p-2 rounded-full border border-border hover:bg-foreground hover:text-background transition-colors">
+            <a aria-label="E-mail" href="mailto:dv.biojoias@gmail.com" className="p-2 rounded-full border border-border hover:bg-foreground hover:text-background transition-colors">
               <Mail className="h-4 w-4" strokeWidth={1.5} />
             </a>
           </div>
@@ -76,7 +76,7 @@ export function Footer() {
       <div className="border-t border-border/60">
         <div className="container-editorial py-6 flex flex-col md:flex-row gap-2 justify-between text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Divou Biojoias. Feito com sementes e cuidado.</p>
-          <p>CNPJ 00.000.000/0001-00 · Brasília, DF</p>
+          <p>CNPJ 67.719.094/0001-24 · Brasília, DF</p>
         </div>
       </div>
     </footer>

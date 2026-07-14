@@ -27,10 +27,10 @@ function Contato() {
 
         <div className="mt-14 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5 space-y-8">
-            <Item icon={MessageCircle} title="WhatsApp" text="(61) 99999-0000" sub="Atendimento das 9h às 18h, seg-sex" />
-            <Item icon={Mail} title="E-mail" text="ola@divoubiojoias.com.br" sub="Respondemos em até 24h úteis" />
+            <Item icon={MessageCircle} title="WhatsApp" text="(61) 99999-6850" sub="Atendimento das 9h às 18h, seg-sex" />
+            <Item icon={Mail} title="E-mail" text="dv.biojoias@gmail.com" sub="Respondemos em até 24h úteis" />
             <Item icon={MapPin} title="Retirada" text="SCS, Brasília · DF" sub="Pontos parceiros — agendamos com você" />
-            <Item icon={Instagram} title="Instagram" text="@divoubiojoias" sub="Bastidores e novidades" />
+            <Item icon={Instagram} title="Instagram" text="@divamesquitabiojoias" sub="Bastidores e novidades" />
           </div>
 
           <form
