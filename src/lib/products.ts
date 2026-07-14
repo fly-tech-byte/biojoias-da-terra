@@ -5,12 +5,46 @@ import sementesRochas from "@/assets/uploaded/colar-sementes-rochas.png.asset.js
 import acaiMagenta from "@/assets/uploaded/colar-acai-magenta.png.asset.json";
 import conjuntoTurquesa from "@/assets/uploaded/conjunto-turquesa.png.asset.json";
 import conjuntoCocoMadeira from "@/assets/uploaded/conjunto-coco-madeira.png.asset.json";
+import colarTaguaPink from "@/assets/uploaded/colar-tagua-pink.png.asset.json";
+import colarMultifiosTurquesa from "@/assets/uploaded/colar-multifios-turquesa.png.asset.json";
+import brincoAcaiMarrom from "@/assets/uploaded/brinco-acai-marrom.png.asset.json";
+import brincoCrocheVerde from "@/assets/uploaded/brinco-croche-verde.png.asset.json";
+import brincoCrocheMostarda from "@/assets/uploaded/brinco-croche-mostarda.png.asset.json";
+import brincoTaguaCoco from "@/assets/uploaded/brinco-tagua-coco.png.asset.json";
+import conjuntoTurquesaCompleto from "@/assets/uploaded/conjunto-turquesa-completo.png.asset.json";
 
 const imagesByCategory: Record<Category, string[]> = {
-  colares: [raizAurea.url, sementesMarrom.url, sementesDiferentes.url, sementesRochas.url, acaiMagenta.url],
-  brincos: [conjuntoTurquesa.url, conjuntoCocoMadeira.url],
-  pulseiras: [conjuntoTurquesa.url, conjuntoCocoMadeira.url],
-  "edicoes-limitadas": [acaiMagenta.url, sementesRochas.url, conjuntoTurquesa.url, sementesDiferentes.url],
+  colares: [
+    raizAurea.url,
+    sementesMarrom.url,
+    sementesDiferentes.url,
+    sementesRochas.url,
+    acaiMagenta.url,
+    colarTaguaPink.url,
+    colarMultifiosTurquesa.url,
+  ],
+  brincos: [
+    brincoAcaiMarrom.url,
+    brincoCrocheVerde.url,
+    brincoCrocheMostarda.url,
+    brincoTaguaCoco.url,
+    conjuntoCocoMadeira.url,
+    conjuntoTurquesa.url,
+  ],
+  pulseiras: [
+    conjuntoTurquesaCompleto.url,
+    conjuntoTurquesa.url,
+    conjuntoCocoMadeira.url,
+    colarMultifiosTurquesa.url,
+  ],
+  "edicoes-limitadas": [
+    colarTaguaPink.url,
+    conjuntoTurquesaCompleto.url,
+    colarMultifiosTurquesa.url,
+    acaiMagenta.url,
+    sementesRochas.url,
+    brincoCrocheMostarda.url,
+  ],
 };
 
 export type Category = "colares" | "brincos" | "pulseiras" | "edicoes-limitadas";
