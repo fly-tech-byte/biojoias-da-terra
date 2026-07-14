@@ -90,7 +90,7 @@ function makeProducts(): Product[] {
         name,
         category: cat,
         price,
-        image: imageFor(cat),
+        image: imageFor(cat, n),
         origin: origins[i % origins.length],
         process: processes[i % processes.length],
         meaning: meanings[i % meanings.length],
