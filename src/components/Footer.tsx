@@ -51,6 +51,7 @@ export function Footer() {
             <li>Trocas e devoluções</li>
             <li>Entregas</li>
             <li>Cuidados</li>
+            <li><Link to="/admin">Painel administrativo</Link></li>
           </ul>
         </div>
 
