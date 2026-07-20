@@ -192,4 +192,10 @@
     transition: transform 0.4s ease;
   }
   .link-underline:hover::after { transform-origin: left; transform: scaleX(0); }
+
+  .input {
+    @apply w-full border border-input bg-background px-3 py-2 rounded-sm text-sm;
+    color: var(--color-foreground);
+  }
+  .input:focus { outline: 2px solid var(--color-clay); outline-offset: -1px; }
 }
