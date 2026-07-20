@@ -6,6 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({ meta: [{ title: "Acessar painel — Divou Biojoias" }] }),
+  ssr: false,
   component: AuthPage,
 });
 
