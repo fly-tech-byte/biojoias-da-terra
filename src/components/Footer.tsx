@@ -68,7 +68,6 @@ export function Footer() {
             </a>
           </div>
           <div className="mt-6 text-xs text-muted-foreground space-y-1">
-            <p>Pix · Cartão até 12x · Boleto</p>
             <p>Envio nacional · Retirada em Brasília</p>
           </div>
         </div>
