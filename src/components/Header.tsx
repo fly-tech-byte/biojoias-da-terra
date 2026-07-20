@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, ShoppingBag, Search } from "lucide-react";
+import { Menu, X, ShoppingBag, Search, LayoutDashboard } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -14,6 +15,7 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { isAdmin } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-[color:var(--color-background)]/85 border-b border-border/60">
@@ -38,6 +40,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {isAdmin && (
+            <Link to="/admin" aria-label="Painel" className="p-2 hover:opacity-70" title="Painel administrativo">
+              <LayoutDashboard className="h-[18px] w-[18px]" strokeWidth={1.5} />
+            </Link>
+          )}
           <button aria-label="Buscar" className="p-2 hover:opacity-70">
             <Search className="h-[18px] w-[18px]" strokeWidth={1.5} />
           </button>
