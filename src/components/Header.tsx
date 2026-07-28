@@ -21,9 +21,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-[color:var(--color-background)]/85 border-b border-border/60">
       <div className="container-editorial flex h-16 md:h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="display-serif text-2xl md:text-[28px]">divou</span>
-          <span className="eyebrow hidden md:inline mt-1">biojoias</span>
+        <Link to="/" className="flex items-center gap-2 group" aria-label="Divou Biojoias — Início">
+          <img src={logoUrl} alt="Divou Biojoias" className="h-10 md:h-12 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
