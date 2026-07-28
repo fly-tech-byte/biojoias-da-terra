@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
-import { ArrowUpRight, Leaf, Package, Sprout } from "lucide-react";
+import { Leaf, Package, Sprout } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
 import { fetchPublicProducts, fetchCategories, mainImage } from "@/lib/db";
 import { supabase } from "@/integrations/supabase/client";
-import { posts } from "@/lib/blog";
+
 import heroImg from "@/assets/hero-model.jpg";
 import processImg from "@/assets/process-hands.jpg";
 import flatlayImg from "@/assets/collection-flatlay.jpg";
@@ -202,27 +202,6 @@ function Home() {
           </section>
         )}
 
-        {/* JOURNAL */}
-        <section className="container-editorial mt-28">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <span className="eyebrow">Diário Divou</span>
-              <h2 className="display-serif mt-2 text-4xl md:text-5xl">Sustentabilidade no artesanato.</h2>
-            </div>
-            <Link to="/blog" className="link-underline hidden md:inline-flex">
-              Todos os posts <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <Link key={post.slug} to="/blog/$slug" params={{ slug: post.slug }} className="group border-t border-border/60 pt-6">
-                <span className="eyebrow block">{post.category} · {post.readTime}</span>
-                <h3 className="display-serif text-2xl mt-3 group-hover:text-[color:var(--color-clay)] transition-colors">{post.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{post.excerpt}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
