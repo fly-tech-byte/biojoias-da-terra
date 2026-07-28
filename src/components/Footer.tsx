@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Mail } from "lucide-react";
+import logoUrl from "@/assets/logo-divou.svg?url";
 
 export function Footer() {
   return (
