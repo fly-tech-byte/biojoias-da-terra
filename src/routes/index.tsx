@@ -215,13 +215,10 @@ function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <Link key={post.slug} to="/blog/$slug" params={{ slug: post.slug }} className="group">
-                <div className="aspect-[4/3] overflow-hidden rounded-sm bg-muted">
-                  <img src={flatlayImg} alt={post.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                </div>
-                <span className="eyebrow mt-4 block">{post.category} · {post.readTime}</span>
-                <h3 className="display-serif text-2xl mt-2 group-hover:text-[color:var(--color-clay)] transition-colors">{post.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{post.excerpt}</p>
+              <Link key={post.slug} to="/blog/$slug" params={{ slug: post.slug }} className="group border-t border-border/60 pt-6">
+                <span className="eyebrow block">{post.category} · {post.readTime}</span>
+                <h3 className="display-serif text-2xl mt-3 group-hover:text-[color:var(--color-clay)] transition-colors">{post.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{post.excerpt}</p>
               </Link>
             ))}
           </div>
