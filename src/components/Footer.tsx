@@ -40,7 +40,7 @@ export function Footer() {
             <li><Link to="/loja">Loja</Link></li>
             <li><Link to="/sobre">Nossa história</Link></li>
             <li><Link to="/galeria">Galeria</Link></li>
-            <li><Link to="/blog">Diário</Link></li>
+            
           </ul>
         </div>
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { posts } from "@/lib/blog";
+
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
 
@@ -36,10 +36,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/loja", changefreq: "weekly", priority: "0.9" },
           { path: "/sobre", changefreq: "monthly", priority: "0.7" },
           { path: "/galeria", changefreq: "monthly", priority: "0.6" },
-          { path: "/blog", changefreq: "weekly", priority: "0.7" },
           { path: "/contato", changefreq: "monthly", priority: "0.5" },
           ...productPaths,
-          ...posts.map((p) => ({ path: `/blog/${p.slug}`, changefreq: "monthly", priority: "0.6" })),
         ];
 
         const xml = [
