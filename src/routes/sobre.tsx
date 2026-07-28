@@ -28,13 +28,10 @@ function Sobre() {
           <div className="md:col-span-6">
             <span className="eyebrow">Nossa história</span>
             <h1 className="display-serif mt-4 text-5xl md:text-7xl">
-              Da floresta<br/>para a sua pele.
+              Quem é a divou biojoias?
             </h1>
             <p className="mt-6 text-muted-foreground leading-relaxed max-w-lg">
-              A Divou começou em 2018, quando Marina Rocha passou três meses entre comunidades
-              do Médio Solimões. Voltou com uma certeza simples: a floresta vale mais em pé.
-              Sete anos depois, somos uma marca-ponte entre artesãs do Norte e quem busca joias
-              com alma — em Brasília e em todo o Brasil.
+              Diva Mesquita de Oliveira Coelho, natural de Minas Gerais na pequena cidade de Pedra do Indaiá. Cursou Escola Normal em Santo Antônio do Monte. Migrou para Brasília em 1984, prestou concurso SEEDF para professora de séries iniciais tomou posse no ano de 1996, cursou faculdade e pós-graduação oferecidos por projetos de políticas públicas. Após aposentar, buscou no artesanato uma forma prazerosa de usar suas habilidades na arte. Artesã de biojoias. As criações de biojoias surgiram a partir do curso ofertado pela Secretaria da Mulher, ministrado pelo Mestre Juão de Fibra. Realizou curso de aperfeiçoamento e curadoria pelo SEBRAE. Propõe em suas criações uso do crochê e sementes. Cada criação é arraigada de amor e dedicação. A inspiração vem das cores e elementos do serrado e de sementes que compõem bioma brasileiro norte/nordeste e centro oeste. O artesanato majoritariamente confeccionado com matéria prima natural. A energia da natureza, traz proteção, beleza e sofisticação nos acessórios para compor um visual elegante.
             </p>
           </div>
           <div className="md:col-span-6">
