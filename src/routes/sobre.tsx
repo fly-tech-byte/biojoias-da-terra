@@ -24,20 +24,18 @@ function Sobre() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
-        <section className="container-editorial pt-16 pb-20 grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-6">
+        <section className="container-editorial pt-16 pb-20 grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-8 md:col-start-3">
             <span className="eyebrow">Nossa história</span>
             <h1 className="display-serif mt-4 text-5xl md:text-7xl">
               Quem é a divou biojoias?
             </h1>
-            <p className="mt-6 text-muted-foreground leading-relaxed max-w-lg">
+            <p className="mt-6 text-muted-foreground leading-relaxed">
               Diva Mesquita de Oliveira Coelho, natural de Minas Gerais na pequena cidade de Pedra do Indaiá. Cursou Escola Normal em Santo Antônio do Monte. Migrou para Brasília em 1984, prestou concurso SEEDF para professora de séries iniciais tomou posse no ano de 1996, cursou faculdade e pós-graduação oferecidos por projetos de políticas públicas. Após aposentar, buscou no artesanato uma forma prazerosa de usar suas habilidades na arte. Artesã de biojoias. As criações de biojoias surgiram a partir do curso ofertado pela Secretaria da Mulher, ministrado pelo Mestre Juão de Fibra. Realizou curso de aperfeiçoamento e curadoria pelo SEBRAE. Propõe em suas criações uso do crochê e sementes. Cada criação é arraigada de amor e dedicação. A inspiração vem das cores e elementos do serrado e de sementes que compõem bioma brasileiro norte/nordeste e centro oeste. O artesanato majoritariamente confeccionado com matéria prima natural. A energia da natureza, traz proteção, beleza e sofisticação nos acessórios para compor um visual elegante.
             </p>
-          </div>
-          <div className="md:col-span-6">
-            <div className="aspect-[4/5] overflow-hidden rounded-sm">
-              <img src={heroImg} alt="" className="h-full w-full object-cover" />
-            </div>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Natural de Minas Gerais e ex-professora da rede pública de Brasília, Diva Mesquita de Oliveira Coelho encontrou no artesanato sua nova vocação. Especializou-se em biojoias através de formações com a Secretaria da Mulher (Mestre Juão de Fibra) e SEBRAE. Suas criações autorais fundem crochê e sementes nativas do Cerrado, Norte e Nordeste, resultando em acessórios sustentáveis que unem elegância, afeto e a força da natureza.
+            </p>
           </div>
         </section>
 
