@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Mail } from "lucide-react";
+import logoUrl from "@/assets/logo-divou.svg?url";
 
 export function Footer() {
   return (
@@ -7,8 +8,7 @@ export function Footer() {
       <div className="container-editorial py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="flex items-baseline gap-2">
-            <span className="display-serif text-3xl">divou</span>
-            <span className="eyebrow">biojoias</span>
+            <img src={logoUrl} alt="Divou Biojoias" className="h-14 w-auto" />
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
             Joias vivas, feitas à mão com sementes e fibras de comunidades brasileiras.
