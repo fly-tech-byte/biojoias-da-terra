@@ -2,6 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, ShoppingBag, Search, LayoutDashboard } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import logoUrl from "@/assets/logo-divou.svg?url";
 
 const nav = [
   { to: "/", label: "Home" },
