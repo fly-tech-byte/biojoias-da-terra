@@ -60,8 +60,7 @@ function Home() {
                   viram <em className="not-italic text-[color:var(--color-clay)]">joia</em>.
                 </h1>
                 <p className="mt-6 max-w-md text-base text-muted-foreground leading-relaxed">
-                  Cada peça da Divou nasce do encontro entre a floresta e mãos artesãs.
-                  Biojoias sustentáveis, rastreáveis, vivas.
+                  Biojoias artesanais que transformam a essência da natureza em beleza única.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link to="/loja" className="btn-primary">
