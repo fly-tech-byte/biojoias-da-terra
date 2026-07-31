@@ -67,7 +67,7 @@ function Sobre() {
               {[
                 ["Coleta", "Sementes recolhidas do chão da floresta, depois da queda natural."],
                 ["Beneficiamento", "Lavadas, secas ao sol e polidas com cera vegetal."],
-                ["Composição", "Trançadas, furadas e amarradas pelas artesãs parceiras."],
+                ["Composição", "Trançadas, furadas e amarradas pelas mãos da Diva Coelho."],
                 ["Acabamento", "Conferência, embalagem reciclada e cartão com a história."],
               ].map(([t, d], i) => (
                 <li key={t} className="flex gap-5 border-t border-border/60 pt-5">
