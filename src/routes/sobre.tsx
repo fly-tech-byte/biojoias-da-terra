@@ -31,10 +31,7 @@ function Sobre() {
               Quem é a divou biojoias?
             </h1>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Diva Mesquita de Oliveira Coelho, natural de Minas Gerais na pequena cidade de Pedra do Indaiá. Cursou Escola Normal em Santo Antônio do Monte. Migrou para Brasília em 1984, prestou concurso SEEDF para professora de séries iniciais tomou posse no ano de 1996, cursou faculdade e pós-graduação oferecidos por projetos de políticas públicas. Após aposentar, buscou no artesanato uma forma prazerosa de usar suas habilidades na arte. Artesã de biojoias. As criações de biojoias surgiram a partir do curso ofertado pela Secretaria da Mulher, ministrado pelo Mestre Juão de Fibra. Realizou curso de aperfeiçoamento e curadoria pelo SEBRAE. Propõe em suas criações uso do crochê e sementes. Cada criação é arraigada de amor e dedicação. A inspiração vem das cores e elementos do serrado e de sementes que compõem bioma brasileiro norte/nordeste e centro oeste. O artesanato majoritariamente confeccionado com matéria prima natural. A energia da natureza, traz proteção, beleza e sofisticação nos acessórios para compor um visual elegante.
-            </p>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              Natural de Minas Gerais e ex-professora da rede pública de Brasília, Diva Mesquita de Oliveira Coelho encontrou no artesanato sua nova vocação. Especializou-se em biojoias através de formações com a Secretaria da Mulher (Mestre Juão de Fibra) e SEBRAE. Suas criações autorais fundem crochê e sementes nativas do Cerrado, Norte e Nordeste, resultando em acessórios sustentáveis que unem elegância, afeto e a força da natureza.
+              Diva Mesquita é mineira de Pedra do Indaiá e educadora aposentada. Em Brasília, transformou sua paixão pela natureza em arte. Após se capacitar com o Mestre Juão de Fibra e o SEBRAE, fundou a marca de biojoias artesanais. Suas criações unem crochê e sementes dos biomas brasileiros, transformando matéria-prima natural em acessórios elegantes, sofisticados e cheios de energia protetora.
             </p>
           </div>
         </section>
