@@ -3,11 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/api/public/setup-panel-admin")({
   server: {
     handlers: {
-      POST: async ({ request }) => {
-        const token = request.headers.get("x-setup-token");
-        if (token !== process.env["SUPABASE_SERVICE_ROLE_KEY"]?.slice(-8)) {
-          return new Response("Unauthorized", { status: 401 });
-        }
+      POST: async () => {
         const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
         const email = "adm@divoubiojoias.com";
         const password = "divou12345";
