@@ -1,53 +1,71 @@
-# Adicionar novos produtos sem repetir imagens
+# Painel mobile "/painel-diva"
 
-## Situação atual (verificada no banco)
+Novo painel pensado para uso no celular, separado do painel atual em `/admin` (que continua funcionando como está).
 
-- 32 produtos cadastrados
-- 32 imagens de produto (1 por produto), todas com endereço diferente
-- Você tem 51 imagens na pasta do Drive
+## 1. Acesso e login
 
-Ou seja: se todas as 51 forem realmente diferentes, faltam cerca de 19 imagens novas.
+- Rota `/painel-diva` protegida: sem sessão, mostra a tela de login (e-mail + senha).
+- O login usa a autenticação do site. Ela exige um e-mail válido, então o usuário "adm" será criado como **adm@divoubiojoias.com** (você digita só isso no campo de e-mail).
+- A senha "12345" é curta demais para o padrão mínimo de segurança do login. Sugestão: **divou12345**. Se preferir manter algo mais curto, me diga e eu reduzo o mínimo exigido — mas não recomendo.
+- Só quem tem papel de administradora entra no painel; a conta nova recebe esse papel na criação.
 
-## Sobre o Google Drive
+## 2. Estrutura do painel
 
-Não consigo abrir pastas do Google Drive (nem por link nem por permissão de acesso). O caminho seguro é você enviar as imagens aqui no chat — o envio aceita até 10 arquivos por mensagem, então serão 5 ou 6 mensagens.
+Layout mobile-first com menu inferior fixo de 3 abas:
 
-Se preferir, você pode baixar a pasta do Drive como .zip e enviar o arquivo: eu extraio tudo de uma vez.
+```text
+┌───────────────────────────┐
+│  divou · painel           │
+│                           │
+│   conteúdo da aba         │
+│                           │
+├───────────────────────────┤
+│  Produtos  Pedidos  Perfil│
+└───────────────────────────┘
+```
 
-## Como eu evito imagens repetidas
+### Aba Produtos
+- Lista em cards: foto, nome e preço.
+- Botão flutuante "+" para novo produto.
+- Formulário simples: foto (câmera ou galeria do celular), nome, categoria, preço de venda, custo de material, estoque.
+- Toque no card abre edição; excluir com confirmação.
+- Indicador visual de estoque baixo e de produto inativo.
 
-Comparação automática, sem depender do nome do arquivo:
+### Aba Pedidos
+- Lista com nome do cliente, produto e status.
+- Status: Novo, Em produção, Enviado, Entregue.
+- Botão para avançar o status em um toque, com histórico de data de atualização.
+- Botão "+" para registrar um pedido recebido pelo WhatsApp.
 
-1. Baixo as 32 imagens já publicadas no site.
-2. Para cada imagem enviada, calculo uma "impressão digital visual" (hash perceptual) e comparo com as do site e com as outras enviadas.
-3. Classifico cada arquivo em: nova, duplicada de um produto existente (com o nome do produto), ou duplicada dentro do próprio envio.
-4. Te mostro a lista antes de cadastrar qualquer coisa. Nada entra no site sem sua confirmação.
+### Aba Perfil
+- Nome e e-mail da conta.
+- Resumo rápido: total de produtos, produtos sem estoque, pedidos em aberto.
+- Atalho para a loja pública e botão Sair.
 
-Esse método reconhece a mesma foto mesmo com nome diferente, tamanho diferente ou recorte leve.
+## 3. Banco de dados
 
-## Cadastro dos produtos novos
+Precisa de duas mudanças, que envio para sua aprovação:
 
-Para cada imagem aprovada como nova, crio o produto com:
+- Novo campo **custo de material** nos produtos, com cálculo de margem exibido no painel.
+- Nova tabela de **pedidos**: nome do cliente, contato, produto, quantidade, valor, status e datas. Visível apenas para a administradora.
 
-- Imagem enviada para o armazenamento do site e vinculada como imagem principal
-- Nome, categoria, preço, estoque, descrição, origem, processo e significado
-- Produto criado como inativo se faltar preço/nome, para você completar no painel
+## 4. Design
 
-Para isso preciso de duas informações suas:
+- Paleta atual da marca: bege, marrom claro, off-white e argila (já definida no site).
+- Títulos na tipografia orgânica usada nas páginas públicas; textos em fonte limpa.
+- Ícones minimalistas arredondados, botões grandes (altura confortável para o toque), cantos suaves e bastante espaçamento.
+- Sem cores fora dos tokens da marca, garantindo consistência com a loja.
 
-- **Dados dos produtos**: você me manda nome, categoria e preço de cada peça (pode ser uma lista simples, na ordem das fotos), ou prefere que eu cadastre com nome provisório e preço zerado para você editar no painel?
-- **Categorias**: as existentes são Pulseira, Colar, Brincos e Conjuntos. Se houver peças fora disso, me diga qual categoria criar.
+## 5. Detalhes técnicos
 
-## Detalhes técnicos
+- Rotas em `src/routes/_authenticated/painel-diva*` reaproveitando o gate de autenticação existente, com tela de login própria quando não houver sessão.
+- Reuso de `src/lib/db.ts` (produtos, categorias, upload de imagem no bucket privado) e criação de `src/lib/orders.ts` para pedidos.
+- Componentes novos em `src/components/painel/` (BottomNav, ProductCard mobile, OrderCard, sheet de formulário).
+- Upload de foto com `<input type="file" accept="image/*" capture="environment">` para abrir a câmera no celular.
+- Novo campo `material_cost` em `products` e tabela `orders` com RLS restrita à administradora e grants adequados.
+- Atualização em tempo real via realtime, como já ocorre na loja.
 
-- Comparação por hash perceptual (dHash/pHash) das imagens, com limiar conservador; qualquer caso duvidoso vai para sua conferência em vez de ser descartado automaticamente.
-- Upload no bucket privado `product-images`, com URL assinada de longa duração, igual ao fluxo já usado pelo painel.
-- Inserção em `products` + `product_images` (`is_main = true`, `display_order = 0`), slug gerado a partir do nome.
-- A loja e a home atualizam em tempo real, sem necessidade de republicar.
+## Antes de começar, confirme
 
-## Ordem de execução
-
-1. Você envia as imagens (chat ou .zip).
-2. Eu rodo a comparação e apresento o relatório de novas x repetidas.
-3. Você confirma e me passa os dados das peças.
-4. Eu cadastro os produtos novos e confirmo o resultado no site.
+1. Posso criar a conta **adm@divoubiojoias.com** com a senha **divou12345**?
+2. O painel atual em `/admin` deve continuar existindo ou prefere que `/painel-diva` seja o único?
