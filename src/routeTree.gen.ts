@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PainelDivaRouteImport } from './routes/painel-diva'
 import { Route as LojaRouteImport } from './routes/loja'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -34,6 +35,11 @@ const SobreRoute = SobreRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PainelDivaRoute = PainelDivaRouteImport.update({
+  id: '/painel-diva',
+  path: '/painel-diva',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LojaRoute = LojaRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/galeria': typeof GaleriaRoute
   '/loja': typeof LojaRoute
+  '/painel-diva': typeof PainelDivaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/galeria': typeof GaleriaRoute
   '/loja': typeof LojaRoute
+  '/painel-diva': typeof PainelDivaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/produto/$slug': typeof ProdutoSlugRoute
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/galeria': typeof GaleriaRoute
   '/loja': typeof LojaRoute
+  '/painel-diva': typeof PainelDivaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
@@ -170,6 +179,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/galeria'
     | '/loja'
+    | '/painel-diva'
     | '/sitemap.xml'
     | '/sobre'
     | '/admin'
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/galeria'
     | '/loja'
+    | '/painel-diva'
     | '/sitemap.xml'
     | '/sobre'
     | '/produto/$slug'
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/galeria'
     | '/loja'
+    | '/painel-diva'
     | '/sitemap.xml'
     | '/sobre'
     | '/_authenticated/admin'
@@ -222,6 +234,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   GaleriaRoute: typeof GaleriaRoute
   LojaRoute: typeof LojaRoute
+  PainelDivaRoute: typeof PainelDivaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   ProdutoSlugRoute: typeof ProdutoSlugRoute
@@ -241,6 +254,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/painel-diva': {
+      id: '/painel-diva'
+      path: '/painel-diva'
+      fullPath: '/painel-diva'
+      preLoaderRoute: typeof PainelDivaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/loja': {
@@ -395,6 +415,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   GaleriaRoute: GaleriaRoute,
   LojaRoute: LojaRoute,
+  PainelDivaRoute: PainelDivaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   ProdutoSlugRoute: ProdutoSlugRoute,
