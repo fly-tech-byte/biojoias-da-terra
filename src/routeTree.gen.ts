@@ -20,7 +20,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
-import { Route as ApiPublicSetupPanelAdminRouteImport } from './routes/api/public/setup-panel-admin'
 import { Route as AuthenticatedAdminProdutosRouteImport } from './routes/_authenticated/admin.produtos'
 import { Route as AuthenticatedAdminCategoriasRouteImport } from './routes/_authenticated/admin.categorias'
 import { Route as AuthenticatedAdminProdutosIndexRouteImport } from './routes/_authenticated/admin.produtos.index'
@@ -81,12 +80,6 @@ const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedAdminRoute,
 } as any)
-const ApiPublicSetupPanelAdminRoute =
-  ApiPublicSetupPanelAdminRouteImport.update({
-    id: '/api/public/setup-panel-admin',
-    path: '/api/public/setup-panel-admin',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const AuthenticatedAdminProdutosRoute =
   AuthenticatedAdminProdutosRouteImport.update({
     id: '/produtos',
@@ -130,7 +123,6 @@ export interface FileRoutesByFullPath {
   '/produto/$slug': typeof ProdutoSlugRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/admin/produtos': typeof AuthenticatedAdminProdutosRouteWithChildren
-  '/api/public/setup-panel-admin': typeof ApiPublicSetupPanelAdminRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/admin/produtos/$id': typeof AuthenticatedAdminProdutosIdRoute
   '/admin/produtos/novo': typeof AuthenticatedAdminProdutosNovoRoute
@@ -146,7 +138,6 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/produto/$slug': typeof ProdutoSlugRoute
   '/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
-  '/api/public/setup-panel-admin': typeof ApiPublicSetupPanelAdminRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/admin/produtos/$id': typeof AuthenticatedAdminProdutosIdRoute
   '/admin/produtos/novo': typeof AuthenticatedAdminProdutosNovoRoute
@@ -166,7 +157,6 @@ export interface FileRoutesById {
   '/produto/$slug': typeof ProdutoSlugRoute
   '/_authenticated/admin/categorias': typeof AuthenticatedAdminCategoriasRoute
   '/_authenticated/admin/produtos': typeof AuthenticatedAdminProdutosRouteWithChildren
-  '/api/public/setup-panel-admin': typeof ApiPublicSetupPanelAdminRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_authenticated/admin/produtos/$id': typeof AuthenticatedAdminProdutosIdRoute
   '/_authenticated/admin/produtos/novo': typeof AuthenticatedAdminProdutosNovoRoute
@@ -186,7 +176,6 @@ export interface FileRouteTypes {
     | '/produto/$slug'
     | '/admin/categorias'
     | '/admin/produtos'
-    | '/api/public/setup-panel-admin'
     | '/admin/'
     | '/admin/produtos/$id'
     | '/admin/produtos/novo'
@@ -202,7 +191,6 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/produto/$slug'
     | '/admin/categorias'
-    | '/api/public/setup-panel-admin'
     | '/admin'
     | '/admin/produtos/$id'
     | '/admin/produtos/novo'
@@ -221,7 +209,6 @@ export interface FileRouteTypes {
     | '/produto/$slug'
     | '/_authenticated/admin/categorias'
     | '/_authenticated/admin/produtos'
-    | '/api/public/setup-panel-admin'
     | '/_authenticated/admin/'
     | '/_authenticated/admin/produtos/$id'
     | '/_authenticated/admin/produtos/novo'
@@ -238,7 +225,6 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   ProdutoSlugRoute: typeof ProdutoSlugRoute
-  ApiPublicSetupPanelAdminRoute: typeof ApiPublicSetupPanelAdminRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -319,13 +305,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/'
       preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
-    }
-    '/api/public/setup-panel-admin': {
-      id: '/api/public/setup-panel-admin'
-      path: '/api/public/setup-panel-admin'
-      fullPath: '/api/public/setup-panel-admin'
-      preLoaderRoute: typeof ApiPublicSetupPanelAdminRouteImport
-      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/admin/produtos': {
       id: '/_authenticated/admin/produtos'
@@ -419,7 +398,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   ProdutoSlugRoute: ProdutoSlugRoute,
-  ApiPublicSetupPanelAdminRoute: ApiPublicSetupPanelAdminRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
