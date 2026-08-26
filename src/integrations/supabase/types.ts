@@ -82,6 +82,56 @@ export type Database = {
           },
         ]
       }
+      orders: {
+        Row: {
+          created_at: string
+          customer_contact: string | null
+          customer_name: string
+          id: string
+          notes: string | null
+          product_id: string | null
+          product_name: string
+          quantity: number
+          status: Database["public"]["Enums"]["order_status"]
+          total_amount: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_contact?: string | null
+          customer_name: string
+          id?: string
+          notes?: string | null
+          product_id?: string | null
+          product_name: string
+          quantity?: number
+          status?: Database["public"]["Enums"]["order_status"]
+          total_amount?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_contact?: string | null
+          customer_name?: string
+          id?: string
+          notes?: string | null
+          product_id?: string | null
+          product_name?: string
+          quantity?: number
+          status?: Database["public"]["Enums"]["order_status"]
+          total_amount?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       product_images: {
         Row: {
           created_at: string
@@ -126,6 +176,7 @@ export type Database = {
           featured: boolean
           id: string
           low_stock_threshold: number
+          material_cost: number
           meaning: string | null
           name: string
           origin: string | null
@@ -144,6 +195,7 @@ export type Database = {
           featured?: boolean
           id?: string
           low_stock_threshold?: number
+          material_cost?: number
           meaning?: string | null
           name: string
           origin?: string | null
@@ -162,6 +214,7 @@ export type Database = {
           featured?: boolean
           id?: string
           low_stock_threshold?: number
+          material_cost?: number
           meaning?: string | null
           name?: string
           origin?: string | null
@@ -219,6 +272,7 @@ export type Database = {
     }
     Enums: {
       app_role: "admin"
+      order_status: "novo" | "em_producao" | "enviado" | "entregue"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -347,6 +401,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin"],
+      order_status: ["novo", "em_producao", "enviado", "entregue"],
     },
   },
 } as const
