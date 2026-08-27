@@ -11,6 +11,7 @@ const nav = [
   { to: "/galeria", label: "Galeria" },
   
   { to: "/contato", label: "Contato" },
+  { to: "/painel-diva", label: "Gestão" },
 ] as const;
 
 export function Header() {
